@@ -28,6 +28,7 @@ import { enableScreens } from 'react-native-screens';
 import StrategiesScreen from '../screens/StrategiesScreen';
 import { Entypo } from '@expo/vector-icons';
 import DeletedProjects from '../screens/DeletedProjects';
+import SwotAnalysisScreen from '../screens/SwotAnalysisScreen';
 
 enableScreens();
 const Stack = createStackNavigator();
@@ -37,7 +38,7 @@ export default function PlanIshNavigator() {
   const [state, setState] = useState(true);
   const [loggedIn, setLogged] = useState(false);
   const [trash, setTrash] = useState(
-    <FontAwesome5 name="trash" size={22} color="white" />
+    <FontAwesome5 name='trash' size={22} color='white' />
   );
   useEffect(() => {
     const authenticate = auth.onAuthStateChanged((user) => {
@@ -95,14 +96,14 @@ export default function PlanIshNavigator() {
       {
         text: 'Bəli',
         onPress: () => {
-          setTrash(<ActivityIndicator size="small" color="white" />);
+          setTrash(<ActivityIndicator size='small' color='white' />);
           db.collection('Projects')
             .doc(id)
             .update({
               deleted: true,
             })
             .then(() => {
-              setTrash(<FontAwesome5 name="trash" size={22} color="white" />);
+              setTrash(<FontAwesome5 name='trash' size={22} color='white' />);
               dispatch(addToDeletedProjects(id, project));
               navigation.navigate('Home');
             })
@@ -137,12 +138,12 @@ export default function PlanIshNavigator() {
         {loggedIn ? (
           <>
             <Stack.Screen
-              name="Home"
+              name='Home'
               component={HomeScreen}
               options={{ title: 'PlanIsh' }}
             />
             <Stack.Screen
-              name="Profile"
+              name='Profile'
               component={ProfileScreen}
               options={({ navigation }) => ({
                 title: 'Hesabım',
@@ -152,13 +153,13 @@ export default function PlanIshNavigator() {
                     style={{ marginRight: 15, marginTop: 3 }}
                     onPress={() => navigation.navigate('Home')}
                   >
-                    <Entypo name="home" size={25} color="white" />
+                    <Entypo name='home' size={25} color='white' />
                   </TouchableOpacity>
                 ),
               })}
             />
             <Stack.Screen
-              name="CreateProject"
+              name='CreateProject'
               component={CreateProjectScreen}
               options={({ navigation }) => ({
                 title: 'Yeni Layihə Yarat',
@@ -168,13 +169,13 @@ export default function PlanIshNavigator() {
                     style={{ marginRight: 15, marginTop: 3 }}
                     onPress={() => navigation.navigate('Home')}
                   >
-                    <Entypo name="home" size={25} color="white" />
+                    <Entypo name='home' size={25} color='white' />
                   </TouchableOpacity>
                 ),
               })}
             />
             <Stack.Screen
-              name="ProjectsScreen"
+              name='ProjectsScreen'
               component={ProjectsScreen}
               options={({ navigation }) => ({
                 title: 'Layihələr',
@@ -184,13 +185,13 @@ export default function PlanIshNavigator() {
                     style={{ marginRight: 15, marginTop: 3 }}
                     onPress={() => navigation.navigate('Home')}
                   >
-                    <Entypo name="home" size={25} color="white" />
+                    <Entypo name='home' size={25} color='white' />
                   </TouchableOpacity>
                 ),
               })}
             />
             <Stack.Screen
-              name="ProjectScreen"
+              name='ProjectScreen'
               component={ProjectScreen}
               options={({ route, navigation }) => ({
                 title: route.params.title,
@@ -214,14 +215,14 @@ export default function PlanIshNavigator() {
                       style={{ marginRight: 15, marginTop: 3 }}
                       onPress={() => navigation.navigate('Home')}
                     >
-                      <Entypo name="home" size={25} color="white" />
+                      <Entypo name='home' size={25} color='white' />
                     </TouchableOpacity>
                   </View>
                 ),
               })}
             />
             <Stack.Screen
-              name="BusinessModel"
+              name='BusinessModel'
               component={BusinessModelScreen}
               options={{
                 title: 'Business Model Canvas',
@@ -230,13 +231,28 @@ export default function PlanIshNavigator() {
                     activeOpacity={0.5}
                     style={{ marginRight: 15, marginTop: 3 }}
                   >
-                    <AntDesign name="infocirlceo" size={25} color="white" />
+                    <AntDesign name='infocirlceo' size={25} color='white' />
                   </TouchableOpacity>
                 ),
               }}
             />
             <Stack.Screen
-              name="DeletedProjects"
+              name='SwotAnalysis'
+              component={SwotAnalysisScreen}
+              options={{
+                title: 'Swot Analysis',
+                headerRight: () => (
+                  <TouchableOpacity
+                    activeOpacity={0.5}
+                    style={{ marginRight: 15, marginTop: 3 }}
+                  >
+                    <AntDesign name='infocirlceo' size={25} color='white' />
+                  </TouchableOpacity>
+                ),
+              }}
+            />
+            <Stack.Screen
+              name='DeletedProjects'
               component={DeletedProjects}
               options={({ navigation }) => ({
                 title: 'Silinmiş Modellər',
@@ -246,13 +262,13 @@ export default function PlanIshNavigator() {
                     style={{ marginRight: 15, marginTop: 3 }}
                     onPress={() => navigation.navigate('Home')}
                   >
-                    <Entypo name="home" size={25} color="white" />
+                    <Entypo name='home' size={25} color='white' />
                   </TouchableOpacity>
                 ),
               })}
             />
             <Stack.Screen
-              name="Strategies"
+              name='Strategies'
               component={StrategiesScreen}
               options={({ route }) => ({
                 title: route.params.title,
@@ -262,13 +278,13 @@ export default function PlanIshNavigator() {
                       activeOpacity={0.5}
                       style={{ marginRight: 15, marginTop: 3 }}
                     >
-                      <FontAwesome name="unsorted" size={25} color="white" />
+                      <FontAwesome name='unsorted' size={25} color='white' />
                     </TouchableOpacity>
                     <TouchableOpacity
                       activeOpacity={0.5}
                       style={{ marginRight: 15, marginTop: 3 }}
                     >
-                      <AntDesign name="infocirlceo" size={25} color="white" />
+                      <AntDesign name='infocirlceo' size={25} color='white' />
                     </TouchableOpacity>
                   </View>
                 ),
@@ -278,12 +294,12 @@ export default function PlanIshNavigator() {
         ) : (
           <>
             <Stack.Screen
-              name="Login"
+              name='Login'
               component={LoginScreen}
               options={{ title: 'Giriş' }}
             />
             <Stack.Screen
-              name="Register"
+              name='Register'
               component={RegisterScreen}
               options={{ title: 'Qeydiyyat' }}
             />

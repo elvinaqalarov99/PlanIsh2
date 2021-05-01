@@ -28,7 +28,12 @@ const ProjectScreen = ({ route, navigation }) => {
           Business Model Canvas
         </Text>
       </Card>
-      <Card style={styles.card}>
+      <Card
+        style={styles.card}
+        handler={() =>
+          navigation.navigate('SwotAnalysis', { id: route.params.id })
+        }
+      >
         <Image
           style={styles.image}
           source={require('../assets/images/SWOT.png')}
