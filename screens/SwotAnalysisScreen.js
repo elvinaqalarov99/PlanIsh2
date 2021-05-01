@@ -1,84 +1,92 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import MainButton from '../components/MainButton';
 import ScrollViewComponent from '../components/ScrollViewComponent';
 import fontSizes from '../constants/fontSizes';
 
 const SwotAnalysisScreen = ({ route, navigation }) => {
   return (
     <ScrollViewComponent>
-      <TouchableOpacity
-        activeOpacity={0.5}
-        onPress={() =>
-          navigation.navigate('Strategies', {
-            title: 'Strengths',
-            id: route.params.id,
-          })
-        }
-      >
-        <View style={styles.section}>
-          <View style={styles.imgContainer}>
-            <Image
-              style={styles.img}
-              source={require('../assets/images/willpower.png')}
-            />
+      <View style={styles.container}>
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={() =>
+            navigation.navigate('Strategies', {
+              title: 'Strengths',
+              id: route.params.id,
+            })
+          }
+        >
+          <View style={styles.section}>
+            <View style={styles.imgContainer}>
+              <Image
+                style={styles.img}
+                source={require('../assets/images/willpower.png')}
+              />
+            </View>
+            <View>
+              <Text style={styles.text}>Strengths</Text>
+            </View>
           </View>
-          <View>
-            <Text style={styles.text}>Strengths</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={() =>
+            navigation.navigate('Strategies', { title: 'Weaknesses' })
+          }
+        >
+          <View style={styles.section}>
+            <View style={styles.imgContainer}>
+              <Image
+                style={styles.img}
+                source={require('../assets/images/weak.png')}
+              />
+            </View>
+            <View>
+              <Text style={styles.text}>Weaknesses</Text>
+            </View>
           </View>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity
-        activeOpacity={0.5}
-        onPress={() =>
-          navigation.navigate('Strategies', { title: 'Weaknesses' })
-        }
-      >
-        <View style={styles.section}>
-          <View style={styles.imgContainer}>
-            <Image
-              style={styles.img}
-              source={require('../assets/images/weak.png')}
-            />
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={() =>
+            navigation.navigate('Strategies', { title: 'Opportunities' })
+          }
+        >
+          <View style={styles.section}>
+            <View style={styles.imgContainer}>
+              <Image
+                style={styles.img}
+                source={require('../assets/images/resources.png')}
+              />
+            </View>
+            <View>
+              <Text style={styles.text}>Opportunities</Text>
+            </View>
           </View>
-          <View>
-            <Text style={styles.text}>Weaknesses</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={() =>
+            navigation.navigate('Strategies', { title: 'Threats' })
+          }
+        >
+          <View style={styles.section}>
+            <View style={styles.imgContainer}>
+              <Image
+                style={styles.img}
+                source={require('../assets/images/budget.png')}
+              />
+            </View>
+            <View>
+              <Text style={styles.text}>Threats</Text>
+            </View>
           </View>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity
-        activeOpacity={0.5}
-        onPress={() =>
-          navigation.navigate('Strategies', { title: 'Opportunities' })
-        }
-      >
-        <View style={styles.section}>
-          <View style={styles.imgContainer}>
-            <Image
-              style={styles.img}
-              source={require('../assets/images/resources.png')}
-            />
-          </View>
-          <View>
-            <Text style={styles.text}>Opportunities</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity
-        activeOpacity={0.5}
-        onPress={() => navigation.navigate('Strategies', { title: 'Threats' })}
-      >
-        <View style={styles.section}>
-          <View style={styles.imgContainer}>
-            <Image
-              style={styles.img}
-              source={require('../assets/images/budget.png')}
-            />
-          </View>
-          <View>
-            <Text style={styles.text}>Threats</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </View>
+      <View style={{ alignItems: 'center' }}>
+        <MainButton title='Ixrac Et' />
+      </View>
     </ScrollViewComponent>
   );
 };
@@ -86,6 +94,9 @@ const SwotAnalysisScreen = ({ route, navigation }) => {
 export default SwotAnalysisScreen;
 
 const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+  },
   section: {
     flexDirection: 'row',
     alignItems: 'center',
