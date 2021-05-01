@@ -29,6 +29,7 @@ import StrategiesScreen from '../screens/StrategiesScreen';
 import { Entypo } from '@expo/vector-icons';
 import DeletedProjects from '../screens/DeletedProjects';
 import SwotAnalysisScreen from '../screens/SwotAnalysisScreen';
+import ValuePropCanvas from '../screens/ValueProp.Canvas';
 
 enableScreens();
 const Stack = createStackNavigator();
@@ -241,6 +242,21 @@ export default function PlanIshNavigator() {
               component={SwotAnalysisScreen}
               options={{
                 title: 'Swot Analysis',
+                headerRight: () => (
+                  <TouchableOpacity
+                    activeOpacity={0.5}
+                    style={{ marginRight: 15, marginTop: 3 }}
+                  >
+                    <AntDesign name='infocirlceo' size={25} color='white' />
+                  </TouchableOpacity>
+                ),
+              }}
+            />
+            <Stack.Screen
+              name='ValuePropCanvas'
+              component={ValuePropCanvas}
+              options={{
+                title: 'Value Proposition Canvas',
                 headerRight: () => (
                   <TouchableOpacity
                     activeOpacity={0.5}

@@ -48,7 +48,15 @@ const ProjectScreen = ({ route, navigation }) => {
           SWOT Analysis
         </Text>
       </Card>
-      <Card style={styles.card}>
+      <Card
+        style={styles.card}
+        handler={() =>
+          navigation.navigate('ValuePropCanvas', {
+            id: route.params.id,
+            type: 3,
+          })
+        }
+      >
         <Image
           style={[styles.image, { height: 170 }]}
           source={require('../assets/images/VPCmodel.png')}
