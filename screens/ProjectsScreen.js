@@ -35,7 +35,7 @@ const ProjectsScreen = ({ navigation }) => {
         activeOpacity={0.5}
         onPress={() => navigation.navigate('CreateProject')}
       >
-        <Entypo name="plus" size={46} color="white" />
+        <Entypo name='plus' size={46} color='white' />
       </TouchableOpacity>
     </View>
   );
