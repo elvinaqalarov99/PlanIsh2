@@ -39,7 +39,7 @@ const RegisterScreen = ({ navigation }) => {
       user.email &&
       user.password &&
       user.password1 &&
-      user.password1 === user.password1
+      user.password === user.password1
     ) {
       auth
         .createUserWithEmailAndPassword(user.email, user.password)
@@ -122,41 +122,41 @@ const RegisterScreen = ({ navigation }) => {
     <ScrollViewComponent>
       <View style={styles.container}>
         <InputLogin
-          placeholder="Ad Soyad"
-          icon="user"
+          placeholder='Ad Soyad'
+          icon='user'
           inputHandler={nameHandler}
           secure={false}
           key={'input1'}
-          iconP="font"
+          iconP='font'
         />
         <InputLogin
-          placeholder="E-poçt"
-          icon="email"
-          iconP="material"
+          placeholder='E-poçt'
+          icon='email'
+          iconP='material'
           inputHandler={emailHandler}
           secure={false}
           key={'input2'}
         />
         <InputLogin
-          placeholder="Şifrə"
-          icon="key"
+          placeholder='Şifrə'
+          icon='key'
           inputHandler={pwdHandler}
           secure={true}
           key={'input3'}
-          iconP="font"
+          iconP='font'
         />
         <InputLogin
-          placeholder="Yenidən daxil edin"
-          icon="key"
+          placeholder='Yenidən daxil edin'
+          icon='key'
           inputHandler={pwdHandler1}
           secure={true}
           key={'input4'}
-          iconP="font"
+          iconP='font'
         />
         <ButtonLogin
           key={'login5'}
           api={false}
-          text="Qeydiyyat"
+          text='Qeydiyyat'
           onPress={loginHandler}
         />
       </View>

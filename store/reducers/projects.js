@@ -9,9 +9,6 @@ import {
 const initialState = {
   projects: [],
   deletedProjects: [],
-  business_models: [],
-  swot_analyses: [],
-  value_propositions: [],
 };
 
 const projectsReducer = (state = initialState, action) => {
@@ -37,9 +34,6 @@ const projectsReducer = (state = initialState, action) => {
         ...state,
         projects: [],
         deletedProjects: [],
-        business_models: [],
-        swot_analyses: [],
-        value_propositions: [],
       };
     case SET_PROJECTS:
       return {
