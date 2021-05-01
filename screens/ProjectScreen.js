@@ -11,7 +11,7 @@ const ProjectScreen = ({ route, navigation }) => {
       <Card
         style={styles.card}
         handler={() =>
-          navigation.navigate('BusinessModel', { id: route.params.id })
+          navigation.navigate('BusinessModel', { id: route.params.id, type: 1 })
         }
       >
         <Image
@@ -31,7 +31,7 @@ const ProjectScreen = ({ route, navigation }) => {
       <Card
         style={styles.card}
         handler={() =>
-          navigation.navigate('SwotAnalysis', { id: route.params.id })
+          navigation.navigate('SwotAnalysis', { id: route.params.id, type: 2 })
         }
       >
         <Image
