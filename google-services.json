@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1031453441842",
+    "project_id": "planish-b46e5",
+    "storage_bucket": "planish-b46e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031453441842:android:3d4a22f998bea267d0612b",
+        "android_client_info": {
+          "package_name": "com.elvin10.PlanIsh2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031453441842-a4a6isp070aprhl9bujil3dampkpu7u3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elvin10.PlanIsh2",
+            "certificate_hash": "9da3921556c5ae5c31cc149d1664ca1ed6a1c68d"
+          }
+        },
+        {
+          "client_id": "1031453441842-nr739ra60f3vblh164mcai7b992lu78c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2urs_8NlFHHaZfufuPl_fFNbF5FNCPgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031453441842-3uk0el8q9e8aq9a8vlk8a35723dk7l4v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1031453441842-jqci6hg6784m70j0j8nr0i2rkt0cpfhu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.elvin10.PlanIsh2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

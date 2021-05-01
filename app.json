@@ -1,0 +1,61 @@
+{
+  "expo": {
+    "name": "PlanIsh",
+    "slug": "PlanIsh",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.elvin10.PlanIsh2",
+      "buildNumber": "1.0.0",
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.1031453441842-jqci6hg6784m70j0j8nr0i2rkt0cpfhu"
+        }
+      },
+      "googleServicesFile": "./GoogleService-Info.plist"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.elvin10.PlanIsh2",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 1,
+      "config": {
+        "googleSignIn": {
+          "apiKey": "AIzaSyC2urs_8NlFHHaZfufuPl_fFNbF5FNCPgs",
+          "certificateHash": "9DA3921556C5AE5C31CC149D1664CA1ED6A1C68D"
+        }
+      }
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.png"
+    },
+    "extra": {
+      "firebase": {
+        "apiKey": "AIzaSyCgvD62LMKNZ2Qsgj_gMZoR-4VMdfdxGoI",
+        "authDomain": "planish-b46e5.firebaseapp.com",
+        "projectId": "planish-b46e5",
+        "storageBucket": "planish-b46e5.appspot.com",
+        "messagingSenderId": "1031453441842",
+        "appId": "1:1031453441842:web:7360a27ef5feb2d3d0612b",
+        "measurementId": "G-321XPT99Q5"
+      }
+    },
+    "facebookAppId": "247558417105136",
+    "facebookDisplayName": "PlanIsh",
+    "facebookScheme": "fb247558417105136"
+  }
+}
