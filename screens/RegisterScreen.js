@@ -6,6 +6,10 @@ import InputLogin from '../components/InputLogin';
 import ScrollViewComponent from '../components/ScrollViewComponent';
 import { auth, db } from '../firebase';
 import { addUser } from '../store/actions/users';
+import { FontAwesome } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { TextInput } from 'react-native-paper';
 
 const RegisterScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -123,35 +127,47 @@ const RegisterScreen = ({ navigation }) => {
       <View style={styles.container}>
         <InputLogin
           placeholder='Ad Soyad'
-          icon='user'
           inputHandler={nameHandler}
-          secure={false}
           key={'input1'}
-          iconP='font'
+          icon={
+            <TextInput.Icon
+              name={() => <FontAwesome name='user' size={24} color='#034577' />}
+            />
+          }
         />
         <InputLogin
           placeholder='E-poçt'
-          icon='email'
-          iconP='material'
           inputHandler={emailHandler}
-          secure={false}
           key={'input2'}
+          icon={
+            <TextInput.Icon
+              name={() => (
+                <MaterialIcons name='email' size={24} color='#034577' />
+              )}
+            />
+          }
         />
         <InputLogin
           placeholder='Şifrə'
-          icon='key'
           inputHandler={pwdHandler}
           secure={true}
           key={'input3'}
-          iconP='font'
+          icon={
+            <TextInput.Icon
+              name={() => <FontAwesome5 name='key' size={24} color='#034577' />}
+            />
+          }
         />
         <InputLogin
           placeholder='Yenidən daxil edin'
-          icon='key'
           inputHandler={pwdHandler1}
           secure={true}
           key={'input4'}
-          iconP='font'
+          icon={
+            <TextInput.Icon
+              name={() => <FontAwesome5 name='key' size={24} color='#034577' />}
+            />
+          }
         />
         <ButtonLogin
           key={'login5'}

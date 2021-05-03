@@ -16,6 +16,9 @@ import { Alert } from 'react-native';
 import fonts from '../constants/fonts';
 import { ActivityIndicator } from 'react-native';
 import { addDeletedProjects, setProjects } from '../store/actions/projects';
+import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { TextInput } from 'react-native-paper';
 
 // const { URLSchemes } = AppAuth;
 
@@ -49,12 +52,12 @@ const LoginScreen = ({ navigation }) => {
 
   const dispatch = useDispatch();
   const [googleText, setGoogleText] = useState(
-    <AntDesign name="google" size={30} color="white" />
+    <AntDesign name='google' size={30} color='white' />
   );
   const [loginText, setLoginText] = useState('Giriş');
   const [gApi, setGApi] = useState(true);
   const [facebookText, setfacebookText] = useState(
-    <AntDesign name="facebook-square" size={30} color="white" />
+    <AntDesign name='facebook-square' size={30} color='white' />
   );
   const [fApi, setFApi] = useState(true);
   const [user, setUser] = useState({
@@ -65,7 +68,7 @@ const LoginScreen = ({ navigation }) => {
   const signInFacebook = useCallback(async () => {
     try {
       setFApi(false);
-      setfacebookText(<ActivityIndicator size="small" color="white" />);
+      setfacebookText(<ActivityIndicator size='small' color='white' />);
       const result = await Facebook.logInWithReadPermissionsAsync({
         permissions: ['public_profile', 'email'],
       });
@@ -117,7 +120,7 @@ const LoginScreen = ({ navigation }) => {
       } else {
         setFApi(true);
         setfacebookText(
-          <AntDesign name="facebook-square" size={30} color="white" />
+          <AntDesign name='facebook-square' size={30} color='white' />
         );
       }
       return result;
@@ -129,7 +132,7 @@ const LoginScreen = ({ navigation }) => {
   const signInGoogle = useCallback(async () => {
     try {
       setGApi(false);
-      setGoogleText(<ActivityIndicator size="small" color="white" />);
+      setGoogleText(<ActivityIndicator size='small' color='white' />);
       const result = await Google.logInAsync({
         androidStandaloneAppClientId: `1031453441842-a4a6isp070aprhl9bujil3dampkpu7u3.apps.googleusercontent.com`,
         iosStandaloneAppClientId: `1031453441842-jqci6hg6784m70j0j8nr0i2rkt0cpfhu.apps.googleusercontent.com`,
@@ -190,7 +193,7 @@ const LoginScreen = ({ navigation }) => {
           });
       } else {
         setGApi(true);
-        setGoogleText(<AntDesign name="google" size={30} color="white" />);
+        setGoogleText(<AntDesign name='google' size={30} color='white' />);
       }
       return result;
     } catch ({ message }) {
@@ -200,7 +203,7 @@ const LoginScreen = ({ navigation }) => {
 
   const loginHandler = () => {
     if (user.password && user.email) {
-      setLoginText(<ActivityIndicator size="small" color="white" />);
+      setLoginText(<ActivityIndicator size='small' color='white' />);
       auth
         .signInWithEmailAndPassword(user.email, user.password)
         .then((authUser) => {
@@ -272,20 +275,27 @@ const LoginScreen = ({ navigation }) => {
     <ScrollViewComponent>
       <View style={styles.container}>
         <InputLogin
-          placeholder="E-poçt"
-          icon="email"
-          iconP="material"
+          placeholder='E-poçt'
           inputHandler={usernameHandler}
-          secure={false}
           key={'input1'}
+          icon={
+            <TextInput.Icon
+              name={() => (
+                <MaterialIcons name='email' size={24} color='#034577' />
+              )}
+            />
+          }
         />
         <InputLogin
-          placeholder="Şifrə"
-          icon="key"
-          iconP="font"
-          inputHandler={pwdHandler}
+          placeholder='Şifrə'
           secure={true}
+          inputHandler={pwdHandler}
           key={'input2'}
+          icon={
+            <TextInput.Icon
+              name={() => <FontAwesome5 name='key' size={24} color='#034577' />}
+            />
+          }
         />
         <ButtonLogin
           key={'login1'}

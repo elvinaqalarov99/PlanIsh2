@@ -1,24 +1,27 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Input } from 'react-native-elements';
-import { FontAwesome } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
+import { TextInput } from 'react-native-paper';
 
-const InputLogin = ({ placeholder, icon, iconP, inputHandler, secure }) => {
+const InputLogin = ({ placeholder, inputHandler, secure = false, icon }) => {
   return (
-    <Input
-      placeholder={placeholder}
-      errorStyle={{ color: 'red' }}
+    <TextInput
       secureTextEntry={secure}
+      label={placeholder}
+      mode='flat'
+      disabled={false}
       onChangeText={(text) => inputHandler(text)}
-      leftIcon={
-        iconP == 'font' ? (
-          <FontAwesome name={icon} size={30} color="#034577" />
-        ) : (
-          <MaterialIcons name={icon} size={30} color="#034577" />
-        )
-      }
-      style={{ width: 100 }}
+      style={{
+        width: '100%',
+        marginBottom: 15,
+      }}
+      theme={{
+        colors: {
+          primary: '#034577',
+          accent: '#034577',
+          underlineColor: 'transparent',
+        },
+      }}
+      left={icon}
     />
   );
 };

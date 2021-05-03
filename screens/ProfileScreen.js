@@ -11,7 +11,7 @@ import {
 import Card from '../components/Card';
 import ProfileInfo from '../components/ProfileInfo';
 import ScrollViewComponent from '../components/ScrollViewComponent';
-import { Avatar } from 'react-native-elements';
+import { Avatar } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth, db, storage } from '../firebase';
 import { addUser, updatePhoto } from '../store/actions/users';
@@ -105,8 +105,7 @@ const ProfileScreen = ({ navigation }) => {
           >
             <TouchableOpacity onPress={pickImage} activeOpacity={0.5}>
               <View style={{ marginRight: 10 }}>
-                <Avatar
-                  rounded
+                <Avatar.Image
                   size={80}
                   source={
                     user?.photoURL
@@ -115,19 +114,18 @@ const ProfileScreen = ({ navigation }) => {
                         }
                       : require('../assets/images/customuser.png')
                   }
-                  containerStyle={styles.avatarContainer}
+                  // containerStyle={styles.avatarContainer}
+                />
+                <View
+                  style={{
+                    opacity: 0.3,
+                    position: 'absolute',
+                    left: '28%',
+                    top: '28%',
+                  }}
                 >
-                  <View
-                    style={{
-                      opacity: 0.5,
-                      position: 'absolute',
-                      left: '26%',
-                      top: '26%',
-                    }}
-                  >
-                    <Entypo name="camera" size={35} color="black" />
-                  </View>
-                </Avatar>
+                  <Entypo name='camera' size={35} color='black' />
+                </View>
               </View>
             </TouchableOpacity>
             <View>
@@ -154,33 +152,33 @@ const ProfileScreen = ({ navigation }) => {
       </Card>
       <Card style={{ height: 'auto', padding: 20 }} opacity={1}>
         <ProfileInfo
-          iconParent="ant"
-          icon="staro"
-          title="Qiymətləndir"
+          iconParent='ant'
+          icon='staro'
+          title='Qiymətləndir'
           marginBottom={30}
           arrow={true}
           //   onPress={appInfoAlertHandler}
         />
         <ProfileInfo
-          iconParent="fontawesome"
-          icon="commenting-o"
-          title="Bizə Rəy Bildirin"
+          iconParent='fontawesome'
+          icon='commenting-o'
+          title='Bizə Rəy Bildirin'
           marginBottom={30}
           arrow={true}
           //   onPress={appInfoAlertHandler}
         />
         <ProfileInfo
-          iconParent="ionic"
-          icon="people-outline"
-          title="Haqqımızda"
+          iconParent='ionic'
+          icon='people-outline'
+          title='Haqqımızda'
           marginBottom={30}
           //   onPress={appInfoAlertHandler}
           arrow={false}
         />
         <ProfileInfo
-          iconParent="material"
-          icon="logout"
-          title="Çıxış"
+          iconParent='material'
+          icon='logout'
+          title='Çıxış'
           marginBottom={0}
           onPress={logOut}
           arrow={false}
@@ -203,9 +201,9 @@ const ProfileScreen = ({ navigation }) => {
           opacity={1}
         >
           <ProfileInfo
-            iconParent="octi"
-            icon="versions"
-            title="Tətbiq Versiyası"
+            iconParent='octi'
+            icon='versions'
+            title='Tətbiq Versiyası'
             onPress={appInfoAlertHandler}
             arrow={false}
           />

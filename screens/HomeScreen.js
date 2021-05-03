@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Card from '../components/Card';
-import { Avatar } from 'react-native-elements';
+import { Avatar } from 'react-native-paper';
 import ScrollViewComponent from '../components/ScrollViewComponent';
 import fontSizes from '../constants/fontSizes';
 import fonts from '../constants/fonts';
@@ -30,8 +30,7 @@ const HomeScreen = ({ navigation }) => {
             }}
           >
             <View style={{ marginRight: 5 }}>
-              <Avatar
-                rounded
+              <Avatar.Image
                 source={
                   user?.photoURL
                     ? {
@@ -40,7 +39,7 @@ const HomeScreen = ({ navigation }) => {
                     : require('../assets/images/customuser.png')
                 }
                 size={70}
-                containerStyle={styles.avatarContainer}
+                // containerStyle={styles.avatarContainer}
               />
             </View>
             <View>
@@ -98,7 +97,7 @@ const HomeScreen = ({ navigation }) => {
             </Text>
           </View>
           <MainButton
-            title="Yeni Layihə Yarat"
+            title='Yeni Layihə Yarat'
             buttonHandler={navigateCreate}
           />
         </View>
