@@ -85,7 +85,7 @@ const SwotAnalysisScreen = ({ route, navigation }) => {
         </TouchableOpacity>
       </View>
       <View style={{ alignItems: 'center' }}>
-        <MainButton title='Ixrac Et' />
+        <MainButton title='İxrac Et' />
       </View>
     </ScrollViewComponent>
   );

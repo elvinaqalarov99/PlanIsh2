@@ -241,7 +241,7 @@ export default function PlanIshNavigator() {
               name='SwotAnalysis'
               component={SwotAnalysisScreen}
               options={{
-                title: 'Swot Analysis',
+                title: 'SWOT Analysis',
                 headerRight: () => (
                   <TouchableOpacity
                     activeOpacity={0.5}
