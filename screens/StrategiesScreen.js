@@ -10,6 +10,7 @@ import { Entypo } from '@expo/vector-icons';
 import fontSizes from '../constants/fontSizes';
 import colors from '../constants/colors';
 import DraggableFlatList from 'react-native-draggable-flatlist';
+
 const StrategiesScreen = ({ route, navigation }) => {
   const initialData = [
     {
@@ -39,7 +40,7 @@ const StrategiesScreen = ({ route, navigation }) => {
         </View>
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.5} onPress={() => {}}>
-        <Entypo name="dots-three-vertical" size={28} color="black" />
+        <Entypo name='dots-three-vertical' size={28} color='black' />
       </TouchableOpacity>
     </View>
   );
@@ -57,7 +58,7 @@ const StrategiesScreen = ({ route, navigation }) => {
         activeOpacity={0.5}
         onPress={() => {}}
       >
-        <Entypo name="plus" size={46} color="white" />
+        <Entypo name='plus' size={46} color='white' />
       </TouchableOpacity>
     </SafeAreaView>
   );
