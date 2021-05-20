@@ -39,9 +39,11 @@ const StrategiesScreen = ({ route, navigation }) => {
           <Text style={styles.text}>{item.label}</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.5} onPress={() => {}}>
-        <Entypo name='dots-three-vertical' size={28} color='black' />
-      </TouchableOpacity>
+      <View style={{ zIndex: 10 }}>
+        <TouchableOpacity activeOpacity={0.5} onPress={() => {}}>
+          <Entypo name='dots-three-vertical' size={28} color='black' />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 
